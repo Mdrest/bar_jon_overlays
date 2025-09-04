@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg_game</title>
+</head>
+<style>
+    #bg{
+        position: relative;
+        top: 600px;
+        left: 40%;
+        animation: bg 12s infinite alternate;
+    }
+    h4{
+        position: absolute;
+        top: 680px;
+        left: 110px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(255, 255, 255);
+        animation: hideText 12s infinite;
+        
+    }
+
+     @keyframes bg {  1%{ transform: translateX(-450%); }  20%{ transform: translateX(-255%); } 80%{ transform: translateX(-255%); } 100%{ transform: translateX(-450%); }  } 
+     @keyframes hideText {
+     10%, 70%, 100% { color: rgba(255, 255, 255, 0); }
+     50% { color: rgb(255, 255, 255); }
+     }
+
+.elemento {
+  animation: esconder 2s forwards;
+}
+</style>
+<body>
+    <img src="https://github.com/Mdrest/jon_bar/blob/main/Captura%20de%20tela%202025-09-03%20213544.png?raw=true" alt="" width="280" id="bg">
+    <h4 >AMBASSADOR IN <strong>LATAM</strong> </h4>
+</body>
+</html>
