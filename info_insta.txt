@@ -1,0 +1,78 @@
+<!-- modal instagram -->
+<div id="instaModal" aria-hidden="true">
+    <img src="https://github.com/Mdrest/jon_bar/blob/main/istockphoto-136201610-612x612-removebg-preview.png?raw=true" alt="" id="chapeu">
+  <div class="insta-card">
+    <div class="insta-logo"></div>
+    <div class="insta-user">@mariliatavares</div>
+  </div>
+</div>
+
+<style>
+  /* container modal */
+  #instaModal{
+    position:absolute;
+    left:50%; bottom:-120px;
+    transform:translateX(-50%);
+    width: 400px; height: 80px;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none;
+    transition: all .7s cubic-bezier(.25,.9,.25,1);
+  }
+  #chapeu{
+    position: absolute;
+    top: -40px;
+    width: 100px;
+    z-index: 3;
+  }
+  #instaModal.visible{
+    bottom:40px;
+    opacity:1; pointer-events:auto;
+  }
+
+  .insta-card{
+    width:100%; height:100%;
+    border-radius:20px;
+    background: linear-gradient(90deg,rgba(255, 191, 0, 1) 0%, rgba(255, 153, 0, 1) 50%, rgba(255, 225, 0, 1) 100%);
+    display:flex; align-items:center; gap:102px;
+    padding:0 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 5px 5px 5px black;
+  }
+
+  .insta-logo{
+    width:50px; height:50px;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png") center/cover no-repeat;
+    border-radius:12px;
+    flex:0 0 50px;
+  }
+
+  .insta-user{
+    position: relative;
+    left: -10%;
+    color:#fff;
+    font-size:22px;
+    font-weight:600;
+    font-family:sans-serif;
+  }
+</style>
+
+<script>
+const instaModal = document.getElementById('instaModal');
+let instaTimer = null;
+
+function showInsta(){
+  instaModal.classList.add('visible');
+  instaModal.setAttribute('aria-hidden','false');
+  if(instaTimer) clearTimeout(instaTimer);
+  instaTimer = setTimeout(hideInsta, 6000);
+}
+function hideInsta(){
+  instaModal.classList.remove('visible');
+  instaModal.setAttribute('aria-hidden','true');
+  if(instaTimer){ clearTimeout(instaTimer); instaTimer = null; }
+}
+
+window.addEventListener('load', ()=> {
+  setTimeout(showInsta, 1000);
+});
+</script>
